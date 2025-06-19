@@ -1,4 +1,5 @@
 import datetime
+import os
 from scrapy import signals
 from scrapy.exporters import JsonItemExporter
 
@@ -16,7 +17,10 @@ class BiblePipeline(object):
         return pipeline
 
     def spider_opened(self, spider):
-        file = open("data/"+"spider.bible_id"+".json", 'w+b')
+        data_dir = os.path.join(os.path.dirname(__file__), 'data')
+        os.makedirs(data_dir, exist_ok=True)
+        file_path = os.path.join(data_dir, 'spider.bible_id.json')
+        file = open(file_path, 'w+b')
         self.files[spider] = file
         self.exporter = JsonItemExporter(file)
         self.exporter.start_exporting()
