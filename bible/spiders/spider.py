@@ -12,14 +12,13 @@ class BibleSpider(scrapy.Spider):
 		# change the language version number the three following line
 		# Iu Mien New Roman: 233 ARA: 1608
         self.bible_id = 59
-        self.base_url = "https://events.bible.com/api/bible/chapter/3.1?id=59&reference="
+        self.base_url = f"https://events.bible.com/api/bible/chapter/3.1?id={self.bible_id}&reference="
         self.start_urls = [
-            'https://events.bible.com/api/bible/chapter/3.1?id=59&reference=GEN.1'
+            f"https://events.bible.com/api/bible/chapter/3.1?id={self.bible_id}&reference=GEN.1"
         ]
 
     def parse(self, response):
-        print("XXXXXXXXXXXXXXXXXXX")
-        print(response)
+        # parse chapter content and accumulate verses
         data = json.loads(response.body.decode('utf-8'))
         text = data['content']
 

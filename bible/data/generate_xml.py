@@ -1,8 +1,11 @@
 import json
+import os
 import xmltodict
 
 # Load the JSON data
-with open('spider.bible_id.json') as f:
+base_dir = os.path.dirname(__file__)
+json_path = os.path.join(base_dir, 'spider.bible_id.json')
+with open(json_path) as f:
     data = json.load(f)
 
 # Create a new dictionary to hold the modified data
@@ -32,5 +35,6 @@ for book_name, chapters in data[0].items():
 xml_data = xmltodict.unparse(modified_data, pretty=True)
 
 # Write the XML data to a file
-with open('spider.bible_id.xml', 'w') as f:
+xml_path = os.path.join(base_dir, 'spider.bible_id.xml')
+with open(xml_path, 'w') as f:
     f.write(xml_data)
