@@ -9,7 +9,7 @@ class BibleSpider(scrapy.Spider):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-		# change the language version number the three following line
+                # change the language version number in the following three lines
 		# Iu Mien New Roman: 233 ARA: 1608
         self.bible_id = 59
         self.base_url = f"https://events.bible.com/api/bible/chapter/3.1?id={self.bible_id}&reference="
