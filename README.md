@@ -39,13 +39,12 @@ To run the project, follow these steps:
      source activate bible-scraper
      ```
 
-4. **CD to bible folder and Install requirements**:
+4. **Install requirements**:
 
-   - Run the following command in your terminal:
-     ```bash
-     cd bible
-     pip install -r requirements.txt
-     ```
+  - Run the following command in your terminal from the repository root:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 5. **Next run "scrapy crawl bible"**:
 
