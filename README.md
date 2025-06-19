@@ -54,19 +54,30 @@ To run the project, follow these steps:
      scrapy crawl bible
      ```
 
-6. **Install xmltodict**:
+6. **Install xmltodict** (already included in `requirements.txt`):
 
-   - Run the following command in your terminal:
+   - If you installed the requirements in step 4, this package is already
+     available. The step below is optional if you want to install it
+     separately.
      ```bash
      pip install xmltodict
      ```
 
 7. **CD to bible/data folder and run the 'generate_xml.py' file**:
-   - Run the following command in your terminal:
-     ```bash
-     cd bible/data
-     python generate_xml.py
-     ```
+    - Run the following command in your terminal:
+      ```bash
+      cd bible/data
+      python generate_xml.py
+      ```
+
+## Running tests
+
+After installing the requirements you can run the unit tests with `pytest` from
+the repository root:
+
+```bash
+pytest
+```
 
 ## Notes
 
